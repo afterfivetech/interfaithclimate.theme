@@ -6,17 +6,39 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     css:if-content="#visual-portal-wrapper">
-
-    <rules css:if-content="#visual-portal-wrapper">
-        <theme href="content.html"/>
-        <!--HEAD SECTION-->
-        <!-- Drop styles in the head - these are added back by including them from Plone -->
-        <drop theme="/html/head/style | /html/head/script | /html/head/link | /html/head/title" />
-        <prepend theme="/html/head" content="/html/head/base | /html/head/link | /html/head/style | /html/head/script | /html/head/meta | /html/head/title" />
-        <replace theme="/html" content="/html" attributes="lang"/>
-        <merge theme="/html/body" content="/html/body" attributes="class"/>
-        <merge theme="/html/body" content="/html/body" attributes="dir"/>
-        <append css:theme="body" css:content="#plone-analytics"/>
-
-    </rules>
+        
+    <!--HEAD SECTION-->
+    <!-- Drop styles in the head - these are added back by including them from Plone -->
+    <drop theme="/html/head/style | /html/head/script | /html/head/link | /html/head/title | /html/head/meta" />
+    <prepend theme="/html/head" content="/html/head/base | /html/head/link | /html/head/style | /html/head/script | /html/head/meta | /html/head/title" />
+    <replace theme="/html" content="/html" attributes="lang"/>
+    <merge theme="/html/body" content="/html/body" attributes="class"/>
+    <merge theme="/html/body" content="/html/body" attributes="dir"/>
+    <append css:theme="body" css:content="#plone-analytics"/>
+    
+    <!--logo-->
+    <replace css:theme-children="#sitename" css:content="#portal-logo"/>
+    
+    <!--main menu-->
+    <replace css:theme-children="#mainmenu" css:content-children="#portal-globalnav"/>
+     
+    <!--drop from content-->
+    <drop css:content="#parent-fieldname-description" />
+    <drop css:content=".documentFirstHeading" />
+    <!--pagetitle-->
+    <replace css:theme="#section2 h1">
+        <xsl:copy-of css:select=".documentFirstHeading"/>
+    </replace>
+    
+    <!--replace theme content-->
+    <replace css:theme-children="section.content" css:content-children="#portal-column-content"/>
+    <replace css:theme-children="#sidebar-left" css:content-children="#portal-column-one"/>
+    <replace css:theme-children="#sidebar-right" css:content-children="#portal-column-two"/>
+    
+    <!--templates-->
+    <theme href="center-content.html" if-content="//div[@id='portal-column-one'] and //div[@id='portal-column-two']"/>
+    <theme href="right-content.html" css:if-content="#portal-column-one"/>
+    <theme href="left-content.html" css:if-content="#portal-column-two"/>
+    <theme href="content.html"/>
+    
 </rules>
