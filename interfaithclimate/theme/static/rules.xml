@@ -30,6 +30,10 @@
         <xsl:copy-of css:select=".documentFirstHeading"/>
     </replace>
     
+    <rules css:if-content=".template-document_view.section-front-page">
+        <theme href="main.html" />
+    </rules>
+    
     <!--replace theme content-->
     <replace css:theme-children="section.content" css:content-children="#portal-column-content"/>
     <replace css:theme-children="#sidebar-left" css:content-children="#portal-column-one"/>
