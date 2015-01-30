@@ -1,19 +1,48 @@
 <?xml version="1.0"?>
 <!-- This file holds the setup configuration for the portal_css tool. -->
-
 <object name="portal_css">
     <stylesheet title=""
         id="public.css"
         media="screen" rel="stylesheet" rendering="import"
         cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="python: ('@@theming-controlpanel' in request.getURL() and request.HTTP_X_THEME_ENABLED) or not request.HTTP_X_THEME_ENABLED"/>
+    <stylesheet title=""
+        id="mobile.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
+    <stylesheet title=""
+        id="portlets.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
+    <stylesheet title=""
+        id="reset.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
+    <stylesheet title=""
+        id="forms.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
+    <stylesheet title=""
+        id="member.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
         enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
 
- <stylesheet title=""
-     id="++theme++interfaithclimate.theme/css/public.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression="request/HTTP_X_THEME_ENABLED|nothing"/>
-
     <!-- -*- extra stuff goes here -*- -->
+    <stylesheet title="Main CSS"
+       id="++theme++interfaithclimate.theme/stylesheets/app.css"
+       media="screen" rel="stylesheet" rendering="import"
+       cacheable="False" compression="safe" cookable="False"
+       enabled="1" expression="python: request.HTTP_X_THEME_ENABLED and not '@@theming-controlpanel' in request.getURL()" applyPrefix="True" insert-before="reset"/>
+    <stylesheet title="Slippry CSS"
+    insert-after="++theme++interfaithclimate.theme/stylesheets/slippry.css"
+    id="wcc-theme-scheme.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True" applyPrefix="True"
+    enabled="1" expression="python: request.HTTP_X_THEME_ENABLED and not '@@theming-controlpanel' in request.getURL()"/>
 
 </object>
