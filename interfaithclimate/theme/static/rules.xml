@@ -32,21 +32,33 @@
     
     <rules css:if-content=".template-document_view.section-front-page">
         <theme href="main.html" />
+        <!--homeBoxes-->
         <replace css:theme-children=".homeBoxes > div">
             <xsl:for-each css:select="#viewlet-below-content #portlets-below > div">
                 <div class="large-4 columns">
                     <div class="wrapper">
                         <div class="img-wrapper">
-                            <a href=""><img alt="image" src="images/3.jpg" /></a>
+                            <a href=""><xsl:copy-of css:select="div > dl > dd > p > span:nth-child(1) > img" /></a>
                         </div>
                         <div class="text-wrapper">
-                            <h2>SUMMIT STATEMENT</h2>
-                            <p>The Interfaith Summit will adopt a statement conveying a message on the threat of climate change and the importance of a fair and ambitious outcome of the international climate negotiations.</p>
+                            <h2><xsl:value-of css:select="div > dl > dt > span:nth-child(2)" /></h2>
+                            <p><xsl:value-of css:select="div > dl > dd > p > span:nth-child(1)" /></p>
                         </div>
                     </div>
                     <a href="#" class="button tiny radius">Read more</a>
                 </div>
             </xsl:for-each>
+        </replace>
+        <!--about-->
+        <replace css:theme-children="#bottom-content-wrapper div:nth-child(1)">
+            <h2><xsl:value-of css:select="#portlets-footer div:nth-child(1) > div > dl > dt > span:nth-child(2)" /></h2>
+            <xsl:for-each css:select="#portlets-footer div:nth-child(1) >div > dl > dd > p">
+                <p style="color: #221f1f"><xsl:value-of css:select="p" /></p>
+            </xsl:for-each>
+        </replace>
+        <replace css:theme-children="#bottom-content-wrapper div:nth-child(2)">
+            <h2><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div > dl > dt > span:nth-child(2)" /></h2>
+            <p><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div > dl > dd > p" /></p>
         </replace>
     </rules>
     
