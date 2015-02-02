@@ -32,6 +32,14 @@
     
     <rules css:if-content=".template-document_view.section-front-page">
         <theme href="main.html" />
+        <!--slider-->
+        <replace css:theme-children="#slippry-demo">
+            <li>
+                <a href="#slide1">
+                    <img src="media/slider/slider-bg/image" alt="Welcome to Slippry!" />
+                </a>
+            </li>
+        </replace>
         <!--homeBoxes-->
         <replace css:theme-children=".homeBoxes > div">
             <xsl:for-each css:select="#viewlet-below-content #portlets-below > div">
