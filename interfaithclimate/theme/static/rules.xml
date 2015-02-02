@@ -32,6 +32,22 @@
     
     <rules css:if-content=".template-document_view.section-front-page">
         <theme href="main.html" />
+        <replace css:theme-children=".homeBoxes > div">
+            <xsl:for-each css:select="#viewlet-below-content #portlets-below > div">
+                <div class="large-4 columns">
+                    <div class="wrapper">
+                        <div class="img-wrapper">
+                            <a href=""><img alt="image" src="images/3.jpg" /></a>
+                        </div>
+                        <div class="text-wrapper">
+                            <h2>SUMMIT STATEMENT</h2>
+                            <p>The Interfaith Summit will adopt a statement conveying a message on the threat of climate change and the importance of a fair and ambitious outcome of the international climate negotiations.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="button tiny radius">Read more</a>
+                </div>
+            </xsl:for-each>
+        </replace>
     </rules>
     
     <!--replace theme content-->
