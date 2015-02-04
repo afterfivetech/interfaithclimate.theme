@@ -88,4 +88,11 @@
     <theme href="left-content.html" css:if-content="#portal-column-two"/>
     <theme href="content.html"/>
     
+    <drop theme="/html/body/script" />
+    <after css:theme-children="body">
+        <script src="++theme++interfaithclimate.theme/js/foundation.min.js"></script>
+        <script src="++theme++interfaithclimate.theme/js/app.js"></script>
+        <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
+    </after>
+    
 </rules>
