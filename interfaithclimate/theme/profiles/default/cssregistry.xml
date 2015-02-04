@@ -34,15 +34,9 @@
 
     <!-- -*- extra stuff goes here -*- -->
     <stylesheet title="Main CSS"
-       id="++theme++interfaithclimate.theme/stylesheets/app.css"
-       media="screen" rel="stylesheet" rendering="import"
-       cacheable="False" compression="safe" cookable="False"
-       enabled="1" expression="python: request.HTTP_X_THEME_ENABLED and not '@@theming-controlpanel' in request.getURL()" applyPrefix="True" insert-before="reset"/>
-    <stylesheet title="Slippry CSS"
-    insert-after="++theme++interfaithclimate.theme/stylesheets/slippry.css"
-    id="wcc-theme-scheme.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True" applyPrefix="True"
-    enabled="1" expression="python: request.HTTP_X_THEME_ENABLED and not '@@theming-controlpanel' in request.getURL()"/>
+        id="++theme++interfaithclimate.theme/stylesheets/app.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="False" compression="safe" cookable="False"
+        enabled="1" expression="python: request.HTTP_X_THEME_ENABLED and not '@@theming-controlpanel' in request.getURL()" applyPrefix="True" insert-before="reset"/>
 
 </object>
