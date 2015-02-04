@@ -88,10 +88,10 @@
     <theme href="left-content.html" css:if-content="#portal-column-two"/>
     <theme href="content.html"/>
     
-    <drop theme="/html/body/script" />
+    <drop theme="/html/body/script | /html/body/link" />
     <after css:theme-children="body">
         <script src="++theme++interfaithclimate.theme/js/foundation.min.js"></script>
-        <xsl:if css:test=".template-document_view.section-front-page">
+        <xsl:if css:test=".section-front-page">
             <script src="++theme++interfaithclimate.theme/js/slippry.min.js"></script>
             <link rel="stylesheet" href="++theme++interfaithclimate.theme/stylesheets/slippry.css"/>
         </xsl:if>
