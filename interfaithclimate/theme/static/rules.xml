@@ -93,7 +93,7 @@
         <script src="++theme++interfaithclimate.theme/js/foundation.min.js"></script>
         <xsl:if css:test=".template-document_view.section-front-page">
             <script src="++theme++interfaithclimate.theme/js/slippry.min.js"></script>
-            <link rel="stylesheet" href="stylesheets/slippry.css"/>
+            <link rel="stylesheet" href="++theme++interfaithclimate.theme/stylesheets/slippry.css"/>
         </xsl:if>
         <script src="++theme++interfaithclimate.theme/js/app.js"></script>
         <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
