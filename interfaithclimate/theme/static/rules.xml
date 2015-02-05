@@ -36,10 +36,19 @@
         <replace css:theme-children="#slippry-demo">
             <li>
                 <a href="#slide1">
-                    <img src="media/slider/slider-bg/image" alt="Welcome to Slippry!" />
+                    <xsl:element name="img">
+                        <xsl:attribute name="src">media/slider/slider-bg/image</xsl:attribute>
+                        <xsl:attribute name="alt">
+                            image title
+                        </xsl:attribute>
+                    </xsl:element>
                 </a>
             </li>
         </replace>
+        
+        <before css:theme-children="#main">
+            <xsl:copy-of css:select="#edit-bar" />
+        </before>
         <!--homeBoxes-->
         <replace css:theme-children=".homeBoxes > div">
             <xsl:for-each css:select="#viewlet-below-content #portlets-below > div">
@@ -65,8 +74,9 @@
             </xsl:for-each>
         </replace>
         <replace css:theme-children="#bottom-content-wrapper div:nth-child(2)">
-            <h2><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div > dl > dt > span:nth-child(2)" /></h2>
-            <p><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div > dl > dd > p" /></p>
+            <h2><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div:nth-child(1) > dl > dt > span:nth-child(2)" /></h2>
+            <p><xsl:value-of css:select="#portlets-footer div:nth-child(2) > div:nth-child(1) > dl > dd > p" /></p>
+            <xsl:copy-of css:select="#portlet-signup" />
         </replace>
     </rules>
     
