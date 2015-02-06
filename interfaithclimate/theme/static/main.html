@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="large-9 columns">
-            <nav id="mainmenu_area" class="show-for-large-up">
-              <ul id="mainmenu">
+            <nav id="mainmenu_area">
+              <ul id="mainmenu" class="show-for-large-up">
                 <li class="current-menu-item"><a>Home</a></li>
                 <li>
                   <a href="">About</a>
@@ -32,7 +32,25 @@
                   </ul>
                 </li>
                 <li><a href="">Contact</a></li>
+                <li><a href="">Homepage 1</a></li>
+                <li><a href="">Homepage 2</a></li>
               </ul>
+              <div class="select-menu hide-for-large-up">
+                <a class="select-menu-button">
+                  <span class="holder">Home</span>
+                </a>
+                <ul class="theme_button" style="display: none">
+                  <li><a href="" class="theme_button">Home</a></li>
+                  <li><a href="" class="theme_button">Home</a></li>
+                  <li>
+                    <a href="" class="theme_button">Home</a>
+                    <ul class="sub-menu">
+                      <li><a href="">Homepage 1</a></li>
+                      <li><a href="">Homepage 2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </nav>
           </div>
         </div>
@@ -191,5 +209,8 @@
     <script src="js/slippry.min.js"></script>
     <link rel="stylesheet" href="stylesheets/slippry.css" />
     <script src="js/app.js"></script>
+    <script>
+      jQuery('#slippry-demo').slippry();
+    </script>
   </body>
 </html>

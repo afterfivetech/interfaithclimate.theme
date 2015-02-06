@@ -104,6 +104,9 @@
         <xsl:if css:test=".section-front-page">
             <script src="++theme++interfaithclimate.theme/js/slippry.min.js"></script>
             <link rel="stylesheet" href="++theme++interfaithclimate.theme/stylesheets/slippry.css"/>
+            <script>
+                jQuery('#slippry-demo').slippry();
+            </script>
         </xsl:if>
         <script src="++theme++interfaithclimate.theme/js/app.js"></script>
         <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
