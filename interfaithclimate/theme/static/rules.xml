@@ -21,6 +21,7 @@
     
     <!--main menu-->
     <replace css:theme-children="#mainmenu" css:content-children="#portal-globalnav"/>
+    <replace css:theme-children=".theme_button" css:content-children="#portal-globalnav"/>
      
     <!--drop from content-->
     <drop css:content="#parent-fieldname-description" />
