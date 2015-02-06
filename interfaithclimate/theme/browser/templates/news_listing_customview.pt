@@ -17,7 +17,7 @@
                   <div class="tileItem visualIEFloatFix"
                      tal:define="item_object item/getObject;">
                       <tal:newsitem condition="python: item_type == 'News Item'">
-                        <article class="post-wrapper row">
+                        <article class="post-wrapper">
                             <div class="large-1 columns post-detail-wrap">
                                 <div class="post_author">
                                     <div class="username">
@@ -32,6 +32,7 @@
                                       </tal:name>
                                     </div>
                                 </div>
+                            </div>
                                 <div class="large-11 columns article post-content-wrap">
                                     <div class="post_thumb">
                                       <a href="#"
@@ -65,7 +66,6 @@
                                       </p>
                                     </div>
                                 </div>
-                            </div>
                               
                         </article> 
                   
