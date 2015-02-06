@@ -1,0 +1,19 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="interfaithclimate.theme">
+
+    <include package="plone.app.portlets" file="permissions.zcml"/>
+    <!-- -*- extra stuff goes here -*- -->
+
+	<plone:portlet
+        name="image_slider.portlet"
+        interface=".image_slider.IContentNavigation"
+        assignment=".image_slider.Assignment"
+        renderer=".image_slider.Renderer"
+        addview=".image_slider.AddForm"
+        editview=".image_slider.EditForm"
+        />
+    
+
+</configure>
