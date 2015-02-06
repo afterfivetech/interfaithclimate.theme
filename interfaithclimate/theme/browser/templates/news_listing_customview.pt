@@ -36,10 +36,10 @@
                                 <div class="large-11 columns article post-content-wrap">
                                     <div class="post_thumb">
                                       <a href="#"
-                                          tal:condition="exists:item_object/image_thumb"
+                                          tal:condition="exists:item_object/image_large"
                                           tal:attributes="href item_url">
                                            <img src="" alt=""
-                                                tal:replace="structure python: path('nocall:item_object/tag')(scale='thumb', css_class='tileImage')" />
+                                                tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
                                       </a>
                                     </div>
                                     <div class="post_info">
