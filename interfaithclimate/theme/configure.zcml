@@ -17,7 +17,7 @@
     <browser:jbot
         directory="jbot"
         layer=".interfaces.IProductSpecific" />
-
+    <include package=".portlet"/>
     <cmf:registerDirectory name="interfaithclimate_theme"/>
 
     <browser:resourceDirectory
