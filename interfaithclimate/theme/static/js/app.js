@@ -1,2 +1,4 @@
 $(document).foundation();
-jQuery('#slippry-demo').slippry();
+$(".select-menu-button").click(function(){
+    $("ul.theme_button").slideToggle();
+});
