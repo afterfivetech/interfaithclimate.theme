@@ -5,7 +5,7 @@
 
     <!-- -*- extra stuff goes here -*- -->
     <javascript
-            id="++theme++interfaithclimate.theme/js/jquery.min.js"
+            id="++theme++interfaithclimate.theme/js/jquery.js"
             cacheable="True" compression="none"
             cookable="False" enabled="True"
             expression="request/HTTP_X_THEME_ENABLED | nothing"
