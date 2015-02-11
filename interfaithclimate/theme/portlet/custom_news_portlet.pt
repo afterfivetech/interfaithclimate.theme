@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<dl class="portlet portletNews"
+    i18n:domain="plone">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a href="#"
+           class="tile"
+           tal:define="all_news_link view/all_news_link"
+           tal:omit-tag="not:all_news_link"
+           tal:attributes="href all_news_link"
+           i18n:translate="box_news">Latest News</a>
+        <span class="portletTopRight"></span>
+    </dt>
+	<ul class="custom-news-portlet">
+		<tal:newsitems  tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+		                            plone_view context/@@plone;
+		                            getIcon nocall:plone_view/getIcon;"
+		                tal:repeat="obj view/published_news_items">
+
+		<li tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+		                            plone_view context/@@plone;
+		                            getIcon nocall:plone_view/getIcon;"
+		                tal:repeat="obj view/published_news_items">
+			<img class="th left news-img" tal:condition="python:obj.getURL()+'/image_thumb'" tal:attributes="src python:obj.getURL()+'/image_thumb'" alt="" />
+			<div class="news-info">
+				<h3>
+					<a href="" tal:attributes="href obj/getURL" class="title">
+						<span tal:replace="obj/pretty_title_or_id">
+						Plone 2.1 announced!
+						</span>
+					 </a>
+				</h3>
+				<time tal:content="python:toLocalizedTime(obj.Date)">15 January 2015</time>
+				<p><span tal:content="python: view.newsDescription(obj.Description)"></span>
+                    <a tal:attributes="href obj/getURL" class="more-link">Read More »</a>
+                </p>
+			</div>
+
+        </li>
+		</tal:newsitems>
+	</ul>
+	    <dd class="portletFooter"
+         tal:condition="view/all_news_link">
+        <span class="portletBottomLeft"></span>
+        <a href=""
+           tal:attributes="href view/all_news_link"
+           i18n:translate="box_more_news_link">
+          More news&hellip;
+        </a>
+        <span class="portletBottomRight"></span>
+    </dd>
+    <tal:block condition="not:view/all_news_link">
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+    </tal:block>
+
+</dl>
+</html>
