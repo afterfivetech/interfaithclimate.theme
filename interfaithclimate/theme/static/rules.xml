@@ -38,14 +38,10 @@
             <ul class="slider-wrapper" data-orbit="">
                 <xsl:for-each css:select=".image_slider_items">
                     <xsl:element name="li">
-                        <xsl:attribute name="style">
-                            background-image: url(++theme++interfaithclimate.theme/images/slider-bg.jpg);
-                            height: 100%;
-                            width: 100%;
-                            background-size: cover;
-                            background-position: top center
-                        </xsl:attribute>
-                        <div class="image-caption">
+                        <xsl:element name="img">
+                            <xsl:attribute name="src"><xsl:value-of css:select=".bg_image"/></xsl:attribute>
+                        </xsl:element>
+                        <div class="orbit-caption">
                             <div class="row">
                                 <div class="small-8 small-centered column">
                                     <xsl:element name="a">
