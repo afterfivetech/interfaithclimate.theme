@@ -8,4 +8,10 @@
         description=""
     />
 
+    <portlet
+        addview="custom_news.portlet"
+        title="Custom News Portlet"
+        description=""
+    />
+
 </portlets>
