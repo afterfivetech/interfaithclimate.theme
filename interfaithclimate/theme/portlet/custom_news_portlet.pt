@@ -15,6 +15,7 @@
            i18n:translate="box_news">Latest News</a>
         <span class="portletTopRight"></span>
     </dt>
+    <dd class="portletItem odd">
 	<ul class="custom-news-portlet">
 		<tal:newsitems  tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
 		                            plone_view context/@@plone;
@@ -43,6 +44,7 @@
         </li>
 		</tal:newsitems>
 	</ul>
+	</dd>
 	    <dd class="portletFooter"
          tal:condition="view/all_news_link">
         <span class="portletBottomLeft"></span>
