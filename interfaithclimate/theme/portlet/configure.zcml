@@ -14,6 +14,15 @@
         addview=".image_slider.AddForm"
         editview=".image_slider.EditForm"
         />
+
+	<plone:portlet
+        name="custom_news.portlet"
+        interface=".custom_news_portlet.IContentNavigation"
+        assignment=".custom_news_portlet.Assignment"
+        renderer=".custom_news_portlet.Renderer"
+        addview=".custom_news_portlet.AddForm"
+        editview=".custom_news_portlet.EditForm"
+        />
     
 
 </configure>
