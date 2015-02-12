@@ -19,8 +19,7 @@
 	<ul class="custom-news-portlet">
 		<tal:newsitems  tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
 		                            plone_view context/@@plone;
-		                            getIcon nocall:plone_view/getIcon;"
-		                tal:repeat="obj view/published_news_items">
+		                            getIcon nocall:plone_view/getIcon;">
 
 		<li tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
 		                            plone_view context/@@plone;
@@ -28,13 +27,13 @@
 		                tal:repeat="obj view/published_news_items">
 			<img class="th left news-img" tal:condition="python:obj.getURL()+'/image_tile'" tal:attributes="src python:obj.getURL()+'/image_tile'" alt="" />
 			<div class="news-info">
-				<h3>
-					<a href="" tal:attributes="href obj/getURL" class="title">
-						<span tal:replace="obj/pretty_title_or_id">
-						Plone 2.1 announced!
-						</span>
-					 </a>
-				</h3>
+			      <h3>
+			          <a href="" tal:attributes="href obj/getURL" class="title">
+				    <span tal:replace="obj/pretty_title_or_id">
+					Plone 2.1 announced!
+				    </span>
+			          </a>
+			      </h3>
 				<time tal:content="python:toLocalizedTime(obj.Date)">15 January 2015</time>
 				<p><span tal:content="python: view.newsDescription(obj.Description)"></span>
                     <a tal:attributes="href obj/getURL" class="more-link">Read More »</a>
