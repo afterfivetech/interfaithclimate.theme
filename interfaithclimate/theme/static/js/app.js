@@ -19,3 +19,13 @@ $('#mainmenu_area > ul#mainmenu li').each(function(){
         $("a.select-menu-button > span.holder").html($(' > a',this).html());	
     }
 });
+
+$('.if-accordion').find('.accord-header').click(function(){
+    
+    //Expand or collapse this panel
+    $(this).next().slideToggle('slow');
+
+    //Hide the other panels
+    $(".accord-content").not($(this).next()).slideUp('slow');
+
+});
