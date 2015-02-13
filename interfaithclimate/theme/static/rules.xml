@@ -31,6 +31,57 @@
         <xsl:copy-of css:select=".documentFirstHeading"/>
     </replace>
     
+    <!--event page-->
+    <rules css:if-content=".template-events_listing_customview">
+        <theme href="main-event.html" />
+        <replace css:theme-children="#section2">
+            <ul class="slider-wrapper" data-orbit="">
+                <xsl:for-each css:select=".image_slider_items">
+                    <xsl:element name="li">
+                        <xsl:element name="img">
+                            <xsl:attribute name="src"><xsl:value-of css:select=".bg_image"/></xsl:attribute>
+                        </xsl:element>
+                        <div class="orbit-caption">
+                            <div class="row">
+                                <div class="small-8 small-centered column">
+                                    <xsl:element name="a">
+                                        <xsl:attribute name="href">
+                                            <xsl:value-of css:select=".page_link"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="class">slider-text</xsl:attribute>
+                                        <xsl:attribute name="title"></xsl:attribute>
+                                        <xsl:element name="img">
+                                            <xsl:attribute name="src">
+                                                <xsl:value-of css:select=".text_image"/>
+                                            </xsl:attribute>
+                                        </xsl:element>
+                                    </xsl:element>
+                                </div>
+                            </div>
+                        </div>
+                    </xsl:element>
+                </xsl:for-each>
+            </ul>
+        </replace>
+        
+        <before css:theme-children="#main">
+            <xsl:copy-of css:select="#edit-bar" />
+        </before>
+        <!--events listing-->
+        <replace css:theme-children=".ewrapper">
+            <div class="large-12 columns">
+                <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+                    <xsl:for-each css:select="#content-core > .tileItem">
+                        <li>
+                            <xsl:copy-of css:select=".article"/>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+                <p class="text-right"><xsl:copy-of css:select="#content-core > a"/></p>
+            </div>
+        </replace>
+    </rules>
+    
     <!--home page-->
     <rules css:if-content=".template-document_view.section-front-page">
         <theme href="main.html" />
@@ -64,11 +115,6 @@
                 </xsl:for-each>
             </ul>
         </replace>
-        
-        <!--event page-->
-        <rules css:if-content=".template-folder_full_view.section-get-involved">
-            <theme href="main-event.html" />
-        </rules>
         
         <before css:theme-children="#main">
             <xsl:copy-of css:select="#edit-bar" />
