@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+    <metal:content-core fill-slot="content-core">
+        <!--<metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">-->
+            <!-- we don't want the dl -->
+            <!--<metal:entries fill-slot="entries">
+                <metal:block use-macro="context/folder_listing/macros/entries">
+                    <metal:entry fill-slot="entry">-->
+            <tal:block tal:define="pas_member context/@@pas_member;
+                                   toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                                   navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+                <tal:block tal:define="brains view/contents" tal:repeat="item brains">
+                    <div class="tileItem visualIEFloatFix"
+                       tal:define="item_url python:item['item_url'];
+                                   item_creator python:item['item_creator'];
+                                   item_start python:item['item_start'];
+                                   item_title_or_id python:item['item_title_or_id'];
+                                   item_type python:item['item_type']">
+                        <tal:block condition="python: item_type == 'Event'">
+                            <div class="article">
+                                <div class="event_thumb">
+                                    <a tal:attributes="href item_url" tal:condition="python:item['hasContentLeadImage']">
+                                        
+                                        <img tal:attributes="src python: item['lead_image']"/>
+                                    </a>
+                                </div>
+                                <div class="event_info" tal:define="author python:pas_member.info(item_creator)">
+                                    <span class="event_date" tal:content="python:toLocalizedTime(item_start,long_format=1)"></span>
+                                    <a class="event_author" tal:condition="item_creator" tal:attributes="href string:${navigation_root_url}/author/${item_creator}" tal:content="author/name_or_id">Admin</a>
+                                </div>
+                                <h3 class="event_title"><a href="#" tal:attributes="href item_url;"
+                                              tal:content="item_title_or_id">Interfaith Celebration</a></h3>
+                                <a tal:attributes="href item_url">Read More<span>»</span></a>
+                            </div>
+                        
+                  
+                        </tal:block>
+
+                    </div>
+                    
+                </tal:block>
+            </tal:block>
+            <a tal:attributes="href string:${context/absolute_url}/folder_full_view">More Events</a>
+                    <!--</metal:entry>
+                </metal:block>
+            </metal:entries>-->
+        <!--</metal:block>-->
+    </metal:content-core>
+
+</body>
+</html>
