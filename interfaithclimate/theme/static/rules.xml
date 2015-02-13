@@ -31,6 +31,7 @@
         <xsl:copy-of css:select=".documentFirstHeading"/>
     </replace>
     
+    <!--home page-->
     <rules css:if-content=".template-document_view.section-front-page">
         <theme href="main.html" />
         <!--slider-->
@@ -63,6 +64,11 @@
                 </xsl:for-each>
             </ul>
         </replace>
+        
+        <!--event page-->
+        <rules css:if-content=".template-folder_full_view.section-get-involved">
+            <theme href="main-event.html" />
+        </rules>
         
         <before css:theme-children="#main">
             <xsl:copy-of css:select="#edit-bar" />
