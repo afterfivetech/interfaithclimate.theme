@@ -77,6 +77,7 @@
                         </li>
                     </xsl:for-each>
                 </ul>
+                <p class="text-right"><xsl:copy-of css:select="#content-core > a"/></p>
             </div>
         </replace>
     </rules>
