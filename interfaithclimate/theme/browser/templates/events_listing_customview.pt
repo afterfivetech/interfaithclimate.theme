@@ -17,7 +17,7 @@
             <tal:block tal:define="pas_member context/@@pas_member;
                                    toLocalizedTime nocall: context/@@plone/toLocalizedTime;
                                    navigation_root_url context/@@plone_portal_state/navigation_root_url;">
-                <tal:block tal:define="brains view/contents" tal:repeat="item brains">
+                <tal:block tal:define="brains view/contents" tal:condition="brains" tal:repeat="item brains">
                     <div class="tileItem visualIEFloatFix"
                        tal:define="item_url python:item['item_url'];
                                    item_creator python:item['item_creator'];
