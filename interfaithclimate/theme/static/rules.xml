@@ -129,10 +129,16 @@
                         </div>
                         <div class="text-wrapper">
                             <h2><xsl:value-of css:select="div > dl > dt > span:nth-child(2)" /></h2>
-                            <p><xsl:value-of css:select="div > dl > dd > p > span:nth-child(1)" /></p>
+                            <p><xsl:value-of css:select="div > dl > dd > p:nth-child(1) > span:nth-child(1)" /></p>
                         </div>
                     </div>
-                    <a href="#" class="button tiny radius">Read more</a>
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="div/dl/dd/p[2]/span[1]/a/@href" />
+                        </xsl:attribute>
+                        <xsl:attribute name="class">button tiny radius</xsl:attribute>
+                        <xsl:value-of css:select="div > dl > dd > p:nth-child(2) > span:nth-child(1) > a" />
+                    </xsl:element>
                 </div>
             </xsl:for-each>
         </replace>
