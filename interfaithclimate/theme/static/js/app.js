@@ -8,7 +8,7 @@ $(document).foundation({
     navigation_arrows: true,
     bullets: true,
     slide_number: false,
-    timer: true,
+    timer: false,
   }    
 });
 $(".select-menu-button").click(function(){
