@@ -16,9 +16,9 @@ setup(name='interfaithclimate.theme',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='',
-      author='Inigo Consulting',
-      author_email='team@inigo-tech.com',
-      url='http://github.com/inigoconsulting/',
+      author='Afterfive Technologies',
+      author_email='holden@afterfivetech.com',
+      url='http://github.com/afterfivetech/',
       license='gpl',
       packages=find_packages(),
       namespace_packages=['interfaithclimate'],
@@ -49,7 +49,7 @@ setup(name='interfaithclimate.theme',
       # The next two lines may be deleted after you no longer need
       # addcontent support from paster and before you distribute
       # your package.
-      setup_requires=["PasteScript"],
-      paster_plugins=["templer.localcommands"],
+      # setup_requires=["PasteScript"],
+      # paster_plugins=["templer.localcommands"],
 
       )
