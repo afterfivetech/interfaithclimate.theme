@@ -26,10 +26,15 @@
     <!--drop from content-->
     <drop css:content="#parent-fieldname-description" />
     <drop css:content=".documentFirstHeading" />
+    <drop css:content="div.state-sign" />
     <!--pagetitle-->
     <replace css:theme="#section2 h1">
         <xsl:copy-of css:select=".documentFirstHeading"/>
     </replace>
+    <!--statement signatories-->
+    <before css:theme-children="aside">
+        <xsl:copy-of css:select="div.state-sign"/>
+    </before>
     
     <!--event page-->
     <rules css:if-content=".template-events_listing_customview">
