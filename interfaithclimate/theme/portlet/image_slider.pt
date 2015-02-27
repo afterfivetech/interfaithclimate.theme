@@ -1,4 +1,4 @@
-<div tal:define="results view/contents" tal:condition="results" id='image_slider' >
+<div tal:define="results view/contents" tal:condition="results" id='image_slider' style='display:none' >
     <div tal:repeat="result results" class="image_slider_items">
         <div class="text_image" tal:content="python: result['txt_img']"></div>
         <div class="bg_image" tal:content="python: result['bg_img']"></div>
