@@ -32,7 +32,7 @@
         <xsl:copy-of css:select=".documentFirstHeading"/>
     </replace>
     <!--statement signatories-->
-    <before css:theme-children="aside">
+    <before css:theme-children="aside" css:if-not-content="body.template-manage-portlets">
         <xsl:copy-of css:select="div.state-sign"/>
     </before>
     
