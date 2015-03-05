@@ -9,14 +9,18 @@
 <body>
 
     <metal:content-core fill-slot="content-core">
-        <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
+        <!--<metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">-->
             <!-- we don't want the dl -->
-            <metal:entries fill-slot="entries">
+            <!--<metal:entries fill-slot="entries">
                 <metal:block use-macro="context/folder_listing/macros/entries">
-                    <metal:entry fill-slot="entry">
+                    <metal:entry fill-slot="entry">-->
                   <div class="tileItem visualIEFloatFix"
-                     tal:define="item_object item/getObject;">
-                      <tal:newsitem condition="python: item_type == 'News Item'">
+                     tal:define="contents view/contents;
+                                 pas_member context/@@pas_member;
+                                 toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                                 navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+                     <tal:entry tal:repeat="obj contents">
+                      <tal:newsitem condition="python: obj['item_type'] == 'News Item'">
                         <article class="post-wrapper">
                             <!--<div class="large-1 columns post-detail-wrap">
                                 <div class="post_author">
@@ -35,47 +39,50 @@
                             </div>-->
                                 <div class="large-12 columns article post-content-wrap">
                                     <div class="post_thumb">
-                                      <a href="#"
+                                      <!--<a href="#"
                                           tal:condition="exists:item_object/image_large"
                                           tal:attributes="href item_url">
                                            <img src="" alt=""
                                                 tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
-                                      </a>
+                                      </a>-->
+                                      <a tal:attributes="href python: obj['item_url']" tal:condition="python: obj['hasImage']">
+                                            <img tal:attributes="src python: obj['image']" />
+                                        </a>
                                     </div>
                                     <div class="post_info">
-                                      <span class="post_date" tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
-                                                August 16, 2001 at 23:35:59
-                                        </span>
+                                      <span class="post_date" tal:replace="python:toLocalizedTime(obj['item_modified'],long_format=1)">
+                                                  August 16, 2001 at 23:35:59
+                                          </span>
                                     </div>
                                     <h2 class="post_title">
                                       <a href="#"
-                                          class="summary url"
-                                          tal:attributes="href item_url;"
-                                          tal:content="item_title_or_id">
-                                           Item Title
-                                       </a>
+                                            class="summary url"
+                                            tal:attributes="href python: obj['item_url'];"
+                                            tal:content="python: obj['item_title_or_id']">
+                                             Item Title
+                                         </a>
                                     </h2>
                                     <div class="post_content">
-                                      <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                      <p tal:condition="python: obj['item_description']" tal:content="python: obj['item_description']">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
                                       <p>
-                                          <a href=""
-                                              tal:attributes="href item_url"> 
-                                                <!--<span class="hiddenStructure"><span tal:replace="item_title_or_id" /> - </span> -->
-                                                <span i18n:translate="read_more">Read More.</span> 
-                                          </a>
-                                      </p>
+                                        <a href=""
+                                            tal:attributes="href python: obj['item_url']"> 
+                                              <!--<span class="hiddenStructure"><span tal:replace="item_title_or_id" /> - </span> -->
+                                              <span i18n:translate="read_more">Read More.</span> 
+                                        </a>
+                                    </p>
                                     </div>
                                 </div>
                               
                         </article> 
                   
                     </tal:newsitem>
-
+                   </tal:entry>
                  </div>
-                    </metal:entry>
+                    <!--</metal:entry>
                 </metal:block>
             </metal:entries>
-        </metal:block>
+        </metal:block>-->
     </metal:content-core>
 
 </body>
