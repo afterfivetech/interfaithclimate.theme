@@ -25,7 +25,7 @@
 		                            plone_view context/@@plone;
 		                            getIcon nocall:plone_view/getIcon;"
 		                tal:repeat="obj view/published_news_items">
-			<img class="th left news-img" tal:condition="python:obj.getURL()+'/image_tile'" tal:attributes="src python:obj.getURL()+'/image_tile'" alt="" />
+			<img class="th left news-img" tal:condition="python:obj.getObject().getImage()" tal:attributes="src python:obj.getURL()+'/image_tile'" alt="" />
 			<div class="news-info">
 			      <h3>
 			          <a href="" tal:attributes="href obj/getURL" class="title">
