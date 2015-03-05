@@ -18,7 +18,7 @@
                      tal:define="item_object item/getObject;">
                       <tal:newsitem condition="python: item_type == 'News Item'">
                         <article class="post-wrapper">
-                            <div class="large-1 columns post-detail-wrap">
+                            <!--<div class="large-1 columns post-detail-wrap">
                                 <div class="post_author">
                                     <div class="username">
                                     <tal:name tal:condition="item_creator"
@@ -32,8 +32,8 @@
                                       </tal:name>
                                     </div>
                                 </div>
-                            </div>
-                                <div class="large-11 columns article post-content-wrap">
+                            </div>-->
+                                <div class="large-12 columns article post-content-wrap">
                                     <div class="post_thumb">
                                       <a href="#"
                                           tal:condition="exists:item_object/image_large"
