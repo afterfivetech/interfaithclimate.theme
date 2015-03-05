@@ -14,7 +14,7 @@ class news_listing_customview(grok.View):
     
     def contents(self):
         context = self.context
-        brains = self.catalog.unrestrictedSearchResults(path={'query':'/'.join(context.getPhysicalPath()), 'depth':1, 'sort_on':'created', 'sort_order':'reverse'}, portal_type='News Item')
+        brains = self.catalog.unrestrictedSearchResults(path={'query':'/'.join(context.getPhysicalPath()), 'depth':1, 'sort_on':'created', 'sort_order':'descending'}, portal_type='News Item')
         results = []
         for brain in brains:
             data = {}
@@ -29,6 +29,6 @@ class news_listing_customview(grok.View):
             data['item_description'] = brain.Description
             results.append(data)
         if results:
-            results.sort(key=lambda x:x['item_created'])
+            results.sort(key=lambda x:x['item_created'], reverse=True)
         
         return results
