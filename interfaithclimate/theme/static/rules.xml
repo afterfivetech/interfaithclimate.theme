@@ -16,6 +16,13 @@
     <merge theme="/html/body" content="/html/body" attributes="dir"/>
     <append css:theme="body" css:content="#plone-analytics"/>
     
+    <!--login-->
+    <before css:theme="header#header" css:if-content="#portal-personaltools-wrapper">
+        <section id="personal_tool">
+            <xsl:copy-of css:select="#portal-personaltools"/>
+        </section>
+    </before>
+    
     <!--logo-->
     <replace css:theme-children="#sitename" css:content="#portal-logo"/>
     
