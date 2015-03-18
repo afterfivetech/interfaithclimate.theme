@@ -6125,7 +6125,8 @@ section#content-wrapper {
       background: #ffffff;
       overflow: hidden; }
       section#content-wrapper #main aside .custom-news-portlet {
-        margin: 0 -1em;
+        /*margin: 0 -1em;*/
+        margin: 0;
         list-style: none; }
         section#content-wrapper #main aside .custom-news-portlet .news-img {
           margin: 2px 10px 2px 0; }
@@ -7876,7 +7877,8 @@ dl.portlet dt {
   font-size: 20px;
   line-height: 24px;
   font-weight: 300;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 19px; }
 
 dl.portlet dt.hiddenStructure {
   padding: 0 !important; }
@@ -7887,7 +7889,7 @@ dl.portlet dt a:link, dl.portlet dt a:visited, dl.portlet dt a:hover {
   border: none; }
 
 dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
-  padding: 1em;
+  /*padding: 1em;*/
   /*custom*/ }
   dl.portlet dd.portletItem ul, dl.portlet dd.portletFooter ul, dl.portletError dd ul {
     list-style: none;
