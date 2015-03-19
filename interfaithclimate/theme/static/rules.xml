@@ -33,6 +33,11 @@
     <!--drop from content-->
     <drop css:content="#parent-fieldname-description" />
     <drop css:content=".documentFirstHeading" />
+    
+    <!--drop edit bar if logout-->
+    <rules css:if-content="#anon-personalbar">
+        <drop css:content="#edit-bar" if-path="new-statement/" />
+    </rules>
     <!--<drop css:content="div.state-sign" />-->
     <!--pagetitle-->
     <replace css:theme="#section2 h1">
