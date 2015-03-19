@@ -36,7 +36,7 @@
     
     <!--drop edit bar if logout-->
     <rules css:if-content="#anon-personalbar">
-        <drop css:content="#edit-bar" if-path="new-statement/" />
+        <drop css:content="#edit-bar" if-path="the-statement/" />
     </rules>
     <!--<drop css:content="div.state-sign" />-->
     <!--pagetitle-->
