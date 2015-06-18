@@ -6461,6 +6461,9 @@ footer {
     right: 8rem; }
  }
 
+.portaltype-interfaithclimate-signup-statement ul.formTabs {
+  display: none !important; }
+
 /* @group Content Area */
 /* Editor styles */
 #content .discreet, #sidebar .discreet {
