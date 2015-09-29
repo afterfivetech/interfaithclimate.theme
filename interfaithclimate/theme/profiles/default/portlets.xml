@@ -14,4 +14,10 @@
         description=""
     />
 
+    <portlet
+        addview="twitterportlet.portlet"
+        title="Twitter Portlet"
+        description=""
+    />
+
 </portlets>
