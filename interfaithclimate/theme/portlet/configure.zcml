@@ -23,6 +23,15 @@
         addview=".custom_news_portlet.AddForm"
         editview=".custom_news_portlet.EditForm"
         />
+
+    <plone:portlet
+        name="twitterportlet.portlet"
+        interface=".twitterportlet.IContentNavigation"
+        assignment=".twitterportlet.Assignment"
+        renderer=".twitterportlet.Renderer"
+        addview=".twitterportlet.AddForm"
+        editview=".twitterportlet.EditForm"
+        />
     
 
 </configure>
